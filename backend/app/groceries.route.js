@@ -1,7 +1,13 @@
 import express from "express"
+import GroceriesCtrl from "./groceries.controller.js"
 
 const router = express.Router()
 
-router.route("/test").get((req, res) => res.send("hello world"))
+router.route("/")
+    .get(GroceriesCtrl.appGetGroceries)
+    .post(GroceriesCtrl.appAddItem)
+    .put(GroceriesCtrl.appUpdateItem)
+    .delete(GroceriesCtrl.appDeleteItem)
+
 
 export default router
