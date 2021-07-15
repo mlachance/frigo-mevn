@@ -1,6 +1,6 @@
 import GroceriesDAO from "../dao/groceriesDAO.js"
 
-export default class GroceriesCtrl {
+export default class GroceriesController {
 
     static async appGetGroceries(req, res, next) {
 
@@ -29,6 +29,16 @@ export default class GroceriesCtrl {
           }
           res.json(response)
 
+    }
+
+    static async appGetAreas(req, res, next) {
+        try {
+            let areas = await GroceriesDAO.getAreas()
+            res.json(areas)
+          } catch (e) {
+            console.log(`controller not working, ${e}`)
+            res.status(500).json({ error: e })
+          }
     }
 
     static async appAddItem(req, res, next) {

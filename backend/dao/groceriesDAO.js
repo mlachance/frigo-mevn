@@ -62,6 +62,18 @@ export default class GroceriesDAO {
 
     }
 
+    // fetch areas from db
+    static async getAreas() {
+        let areas = []
+        try {
+            areas = await groceries.distinct("area")
+            return areas
+        } catch (e) {
+            console.error(`Unable to get areas, ${e}`)
+            return areas
+        }
+    }
+
     // add new grocery item to db
     static async addItem(name, area, quantity, unit, useUpBy, shoppingList, shoppingListQuantity) {
 
