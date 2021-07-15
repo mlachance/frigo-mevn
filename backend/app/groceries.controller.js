@@ -61,7 +61,7 @@ export default class GroceriesCtrl {
     static async appUpdateItem(req, res, next) {
 
         try {
-            const itemId = req.body.review_id
+            const itemId = req.body.itemId
             const name = req.body.name
             const area = req.body.area
             const quantity = req.body.quantity
@@ -97,7 +97,7 @@ export default class GroceriesCtrl {
     static async appDeleteItem(req, res, next) {
 
         try {
-            const itemId = req.body.review_id
+            const itemId = req.body.itemId
 
             const groceryResponse = await GroceriesDAO.deleteItem(
                 itemId,
