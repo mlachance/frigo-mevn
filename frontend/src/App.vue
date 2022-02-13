@@ -1,6 +1,8 @@
 <template>
-  <Sidebar />
-  <Overview />
+  <div class="app">
+    <Sidebar />
+    <Overview />
+  </div>
 </template>
 
 <script lang="ts">
@@ -18,5 +20,10 @@ export default defineComponent({
 </script>
 
 <style>
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
 
 </style>

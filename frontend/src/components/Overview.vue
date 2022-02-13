@@ -1,8 +1,10 @@
 <template>
-    <h1>This is the overview.</h1>
+  <div class="overview">
+    <h1>Hello, Marianne</h1>
     <SearchFilter />
     <Add />
     <ListItem />
+  </div>
 </template>
 
 <script lang="ts">

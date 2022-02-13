@@ -13,6 +13,7 @@
     --yellow: rgba(245,178,2,255);
     --brown: rgba(180,133,79,255);
     --green-grey: rgba(174,195,177,255);
+    --white: #fff;
 }
 
 /* --- STYLING RESETS --- */
@@ -26,7 +27,7 @@ body {
     color: var(--dark-green);
 }
 
-p, a, span {
+p, a, span, ul, li {
     font-family: Inter, sans-serif;
 }
 
