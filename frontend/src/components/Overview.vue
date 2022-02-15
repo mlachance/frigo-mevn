@@ -3,7 +3,7 @@
     <h1>Hello, Marianne</h1>
     <SearchFilter />
     <Add />
-    <ListItem />
+    <ListView />
   </div>
 </template>
 
@@ -11,18 +11,22 @@
 import { defineComponent } from 'vue'
 import SearchFilter from './Items/SearchFilter.vue'
 import Add from './Items/Add.vue'
-import ListItem from './Items/ListItem.vue'
+import ListView from './ListView.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
     SearchFilter,
     Add,
-    ListItem
+    ListView
   }
 })
 </script>
 
 <style scoped>
+
+.overview {
+  margin: 3rem;
+}
 
 </style>
