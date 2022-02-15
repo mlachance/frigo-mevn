@@ -3,7 +3,7 @@
         <p>{{ product.name }}</p>
         <p class="tag">{{ product.area }}</p>
         <p>{{ product.quantity }}</p>
-        <p>{{ calculateExpiry(product.expiry) }} days</p>
+        <p :class="{ expiring : isExpiring, expired : isExpired }">{{ calculateExpiry(product.expiry) }}</p>
     </div>
 </template>
 
@@ -12,18 +12,38 @@ import { defineComponent, PropType } from 'vue'
 import { Product } from '../../types'
 
 export default defineComponent({
+    data () {
+        return {
+            isExpiring: false,
+            isExpired: false
+        }
+    },
     props: {
         product: Object as PropType<Product>
     },
     methods: {
 
-        calculateExpiry(expiry: Date) {
+        calculateExpiry(expiry: Date): string {
+
             const dateToday = new Date;
 
-            const diffTime = Math.abs(expiry.valueOf() - dateToday.valueOf());
+            const diffTime = expiry.valueOf() - dateToday.valueOf();
             const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
 
-            return diffDays;
+            if (diffDays < 4 && diffDays >= 0) {
+                this.isExpiring = true;
+            }
+
+            if (diffDays > 0) {
+                return diffDays + " days";
+            } 
+            else if (diffDays == 0) {
+                return "Expiring today";
+            } 
+            else 
+                this.isExpired = true;
+                return "Expired since " + Math.abs(diffDays) + " days";
+
         }
 
     }
@@ -54,6 +74,17 @@ export default defineComponent({
 
 .list-item > p:not(:first-child) {
     text-align: center
+}
+
+.expired {
+    color: rgb(165, 15, 15);
+    font-weight: bold;
+}
+
+
+.expiring {
+    color: var(--yellow);
+    font-weight: bold;
 }
 
 </style>

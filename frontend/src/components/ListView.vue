@@ -28,9 +28,9 @@ export default defineComponent({
                     id: 1235,
                     name: 'Banana',
                     area: 'Pantry',
-                    quantity: 41,
+                    quantity: 2,
                     unit: 'pcs',
-                    expiry: new Date("2022-02-20"),
+                    expiry: new Date("2022-02-16"),
                     onShoppingList: false
                 } as Product,
 

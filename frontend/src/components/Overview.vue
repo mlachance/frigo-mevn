@@ -1,10 +1,17 @@
 <template>
   <div class="overview">
+
     <h1>Hello, Marianne</h1>
-    <SearchFilter />
-    <Add />
+
+    <div class="controls">
+      <SearchFilter />
+      <Add />
+    </div>
+
     <ListView />
+
   </div>
+
 </template>
 
 <script lang="ts">
@@ -27,6 +34,13 @@ export default defineComponent({
 
 .overview {
   margin: 3rem;
+}
+
+.controls {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-template-rows: 1fr;
 }
 
 </style>
