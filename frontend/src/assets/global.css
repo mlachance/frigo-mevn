@@ -9,6 +9,7 @@
 /* --- COLOR VARIABLES --- */
 :root {
     --light-green: rgba(105,145,110,255);
+    --lighter-green: rgba(174,195,177,255);
     --dark-green: rgba(12,56,43,255);
     --yellow: rgba(245,178,2,255);
     --brown: rgba(180,133,79,255);
