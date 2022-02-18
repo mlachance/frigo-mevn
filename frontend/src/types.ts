@@ -7,7 +7,7 @@ export interface Product {
     expiry: Date
     onShoppingList: boolean
     quantityOnShoppingList?: number // also optional
-    nutritionalValue?: [KeyValuePair]
+    nutritionalValue?: Array<KeyValuePair>
 }
 
 export interface Recipe {
@@ -15,10 +15,10 @@ export interface Recipe {
     name: string
     description: string
     img: string
-    categories: [string]
-    nutritionalValue: [KeyValuePair]
-    ingredients: [string]
-    instructions: [string]
+    categories: Array<string>
+    ingredients: Array<string>
+    instructions: Array<string>
+    nutritionalValue?: Array<KeyValuePair>
 }
 
 export interface KeyValuePair {

@@ -18,7 +18,7 @@
 import { defineComponent } from 'vue'
 import SearchFilter from './Items/SearchFilter.vue'
 import Add from './Items/Add.vue'
-import ListView from './ListView.vue'
+import ListView from './Views/ListView.vue'
 
 export default defineComponent({
   name: 'App',

@@ -1,20 +1,20 @@
 <template>
   <div class="app">
     <Sidebar />
-    <Overview />
+    <Home />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import Sidebar from './components/Sidebar.vue';
-import Overview from './components/Overview.vue';
+import Home from './components/Home.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
     Sidebar,
-    Overview
+    Home
   }
 });
 </script>

@@ -1,28 +1,29 @@
 <template>
     <div class="list-view">
         <div class="list-heading">
-            <h3>Item</h3>
+            <div class="heading-item">
+                <h3>Item</h3><svg class="chevron" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><title/><g data-name="Layer 2" id="Layer_2"><path d="M16,21a1,1,0,0,1-.71-.29l-8-8a1,1,0,1,1,1.42-1.42L16,18.59l7.29-7.3a1,1,0,0,1,1.42,1.42l-8,8A1,1,0,0,1,16,21Z"/></g><g id="frame"><rect class="cls-1" height="32" width="32"/></g></svg>
+            </div>
             <h3 class="tag-heading">Area</h3>
             <h3>Quantity</h3>
             <h3>Expires in</h3>
         </div>
-        <ListItem v-for="item in productsList" :key="item" :product="item" />
+        <ListItem v-for="item in productsList" :key="item.name" :product="item" />
     </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import ListItem from './Items/ListItem.vue'
-import { Product } from '../types'
+import { defineComponent, ref } from 'vue'
+import ListItem from '../Items/ListItem.vue'
+import { Product } from '../../types'
 
 export default defineComponent({
     components: {
         ListItem
     },
-    data () {
-        return {
+    setup() {
 
-            productsList: [
+        const productsList = ref([
 
                 {
                     id: 1235,
@@ -44,9 +45,12 @@ export default defineComponent({
                     onShoppingList: false
                 } as Product
 
-            ]
+            ])
 
+        return {
+            productsList
         }
+
     }
 })
 </script>
@@ -66,6 +70,21 @@ export default defineComponent({
 
 .list-heading > h3:not(:first-child) {
     text-align: center
+}
+
+.heading-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.chevron {
+    height: 1.5rem;
+    margin-left: 0.5rem;
+    fill: var(--dark-green);
+}
+
+.chevron .cls-1 {
+    fill:none;
 }
 
 </style>
