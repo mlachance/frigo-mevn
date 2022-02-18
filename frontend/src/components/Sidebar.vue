@@ -1,13 +1,15 @@
 <template>
     <div class="sidebar">
-        <img class="logo" src="../assets/Logo.svg" alt="Frigo - grocery management">
+        <router-link to="/">
+            <img class="logo" src="../assets/Logo.svg" alt="Frigo - grocery management">
+        </router-link>
         <nav>
             <ul>
-                <li>Pantry</li>
-                <li>Recipes</li>
-                <li>Meal Plan</li>
-                <li>Shopping List</li>
-                <li>Unit Converter</li>
+                <li><router-link to="/pantry">Pantry</router-link></li>
+                <li><router-link to="/recipes">Recipes</router-link></li>
+                <li>Meal Plan (tbd)</li>
+                <li>Shopping List (tbd)</li>
+                <li>Unit Converter (tbd)</li>
             </ul>
         </nav>
         <img class="bg-pattern" src="../assets/bg.svg" alt="Frigo - grocery management">
@@ -35,6 +37,11 @@ export default defineComponent({
 .logo {
     width: 40%;
     margin: 3rem auto 3rem 10%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
 }
 
 
