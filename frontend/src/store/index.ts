@@ -43,7 +43,7 @@ const state: State = {
     } as Recipe,
     {
         id: 1,
-        name: 'Miso Aubergine with a lot of text in the title',
+        name: 'Miso Aubergine with some text in the title',
         description: 'Delicious smoky flavor directly produced in the oven.',
         img: 'https://schlaraffenwelt.de/wp-content/uploads/2020/08/auberginen.jpg',
         categories: ['Vegan', 'Rice'],

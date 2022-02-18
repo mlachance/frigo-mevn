@@ -10,7 +10,7 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import CardItem from '../Items/CardItem.vue'
-import { Recipe } from '../../types'
+import { useStore } from 'vuex';
 
 export default defineComponent({
     components: {
@@ -18,26 +18,8 @@ export default defineComponent({
     },
     setup() {
 
-        const recipeList = ref([
-                {
-                    id: 1,
-                    name: 'Lentil Bolognese',
-                    description: 'A veganized Italian classic.',
-                    img: 'https://rainbowplantlife.com/wp-content/uploads/2020/04/red-lentil-bolognese-twirling-pasta-1.png',
-                    categories: ['Vegan', 'Pasta'],
-                    ingredients: ['Garlic', 'Onion', 'Tomato', 'Lentils'],
-                    instructions: ['Peel and cut garlic and onion.', 'Cook the sauce, serve with pasta.'],
-                } as Recipe,
-                {
-                    id: 1,
-                    name: 'Miso Aubergine with a lot of text in the title',
-                    description: 'Delicious smoky flavor directly produced in the oven.',
-                    img: 'https://schlaraffenwelt.de/wp-content/uploads/2020/08/auberginen.jpg',
-                    categories: ['Vegan', 'Rice'],
-                    ingredients: ['Aubergine', 'Miso', 'Soy sauce', 'Rice'],
-                    instructions: ['Cut aubergine into half, score and brush with miso.', 'Broil in the oven, serve with rice and sesame seeds.'],
-                } as Recipe,
-            ])
+        const store = useStore();
+        const recipeList = ref(store.state.recipeList)
 
         return {
             recipeList
