@@ -1,6 +1,5 @@
 <template>
     <div class="card-view">
-        <h3>Recipes</h3>
         <div class="card-grid">
             <CardItem v-for="recipe in recipeList" :key="recipe.name" :recipe="recipe" />
         </div>

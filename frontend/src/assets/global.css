@@ -35,3 +35,15 @@ p, a, span, ul, li {
 h1, h2, h3, h4, h5, h6 {
     font-family: Vollkorn, serif;
 }
+
+/* --- GLOBAL STYLES --- */
+.container {
+    margin: 3rem;
+  }
+
+.search-filter-add {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    grid-template-rows: 1fr;
+  }

@@ -1,9 +1,9 @@
 <template>
-  <div class="overview">
+  <div class="container">
 
     <h1>Hello, Marianne</h1>
 
-    <div class="controls">
+    <div class="search-filter-add">
       <SearchFilter />
       <Add />
     </div>
@@ -31,16 +31,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-
-.overview {
-  margin: 3rem;
-}
-
-.controls {
-  margin-top: 2rem;
-  display: grid;
-  grid-template-columns: 5fr 1fr;
-  grid-template-rows: 1fr;
-}
 
 </style>
