@@ -1,5 +1,5 @@
 # frigo
-A MERN app to help organize your groceries, recipes and weekly meal plans.
+A MEVN app to help organize your groceries, recipes and weekly meal plans. Frontend written in Vue 3 and Typescript.
 
 ## Planned Features
 - Pantry overview and planner
