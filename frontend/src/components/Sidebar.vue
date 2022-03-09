@@ -5,8 +5,8 @@
         </router-link>
         <nav>
             <ul>
-                <li><router-link to="/pantry">Pantry</router-link></li>
-                <li><router-link to="/recipes">Recipes</router-link></li>
+                <router-link to="/pantry"><li>Pantry</li></router-link>
+                <router-link to="/recipes"><li>Recipes</li></router-link>
                 <li>Meal Plan (tbd)</li>
                 <li>Shopping List (tbd)</li>
                 <li>Unit Converter (tbd)</li>
@@ -32,6 +32,8 @@ export default defineComponent({
     height: 100vh;
     display: grid;
     grid-template-rows: 1fr 3fr 2fr;
+    position: sticky;
+    top: 0;
 }
 
 .logo {
@@ -39,9 +41,25 @@ export default defineComponent({
     margin: 3rem auto 3rem 10%;
 }
 
-a {
+.sidebar a {
     text-decoration: none;
     color: white;
+}
+
+.sidebar ul {
+    margin-left: 2rem;
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 1rem;
+    padding: 1rem 1rem 1rem 1.5rem;
+    border-radius: 2rem 0 0 2rem;
+}
+
+.sidebar ul li:hover {
+    background-color:white;
+    color: var(--dark-green);
 }
 
 
